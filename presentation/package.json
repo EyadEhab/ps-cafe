@@ -1,0 +1,7 @@
+{
+  "name": "ps-cafe-presentation",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server . -p 3400 -c-1"
+  }
+}

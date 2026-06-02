@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS Cafe — Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Canvas Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Navigation Dots -->
+  <nav class="slide-nav" id="slideNav"></nav>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"><span></span></div>
+
+  <!-- Slides -->
+  <main class="slides" id="slides">
+
+    <!-- SLIDE 0: Title -->
+    <section class="slide active" data-slide="0">
+      <div class="scanlines"></div>
+      <div class="noise"></div>
+      <div class="slide-content center">
+        <div class="glitch-wrapper">
+          <h1 class="glitch" data-text="PS CAFE">PS CAFE</h1>
+        </div>
+        <p class="subtitle typing">PlayStation Gaming Cafe Management System</p>
+        <div class="title-meta">
+          <span class="meta-badge">Full-Stack</span>
+          <span class="meta-badge">React + Node.js</span>
+          <span class="meta-badge">SQLite</span>
+        </div>
+        <div class="scroll-hint">
+          <span>SCROLL</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 1: Overview -->
+    <section class="slide" data-slide="1">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">01</span>
+        <h2>Project Overview</h2>
+        <p class="slide-subtitle">A complete management ecosystem for PlayStation gaming cafes</p>
+        <div class="overview-grid">
+          <div class="overview-card" style="--i:0">
+            <div class="card-icon">🎮</div>
+            <h3>Session Management</h3>
+            <p>Start, monitor, and end gaming sessions with real-time cost tracking and 15-minute billing intervals.</p>
+          </div>
+          <div class="overview-card" style="--i:1">
+            <div class="card-icon">📦</div>
+            <h3>Product Orders</h3>
+            <p>Add snacks, drinks, and extras to any session. Track inventory and per-session product revenue.</p>
+          </div>
+          <div class="overview-card" style="--i:2">
+            <div class="card-icon">💰</div>
+            <h3>Dynamic Pricing</h3>
+            <p>Per-station pricing with day/night rates, weekday/weekend multipliers, and single/multi-player modes.</p>
+          </div>
+          <div class="overview-card" style="--i:3">
+            <div class="card-icon">📊</div>
+            <h3>Reports &amp; Analytics</h3>
+            <p>Dashboard with revenue charts, session history, and top-selling product insights at a glance.</p>
+          </div>
+          <div class="overview-card" style="--i:4">
+            <div class="card-icon">🔐</div>
+            <h3>Role-Based Access</h3>
+            <p>Admin and Worker roles with permission-gated UI: workers manage sessions, admins control everything.</p>
+          </div>
+          <div class="overview-card" style="--i:5">
+            <div class="card-icon">📋</div>
+            <h3>Audit Trail</h3>
+            <p>Every action logged with before/after JSON diffs. Full transparency for all modifications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Tech Stack -->
+    <section class="slide" data-slide="2">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">02</span>
+        <h2>Technology Stack</h2>
+        <p class="slide-subtitle">Modern tools for a modern cafe</p>
+        <div class="stack-wrapper">
+          <div class="stack-column">
+            <div class="stack-group">
+              <h3><span class="accent-dot"></span>Frontend</h3>
+              <div class="stack-items">
+                <div class="stack-item" style="--d:0"><span class="stack-name">React 18</span><span class="stack-desc">Component architecture</span></div>
+                <div class="stack-item" style="--d:1"><span class="stack-name">React Router v6</span><span class="stack-desc">Client-side routing</span></div>
+                <div class="stack-item" style="--d:2"><span class="stack-name">Vite</span><span class="stack-desc">Fast build tool</span></div>
+                <div class="stack-item" style="--d:3"><span class="stack-name">Axios</span><span class="stack-desc">HTTP client</span></div>
+              </div>
+            </div>
+            <div class="stack-group">
+              <h3><span class="accent-dot"></span>Deployment</h3>
+              <div class="stack-items">
+                <div class="stack-item" style="--d:4"><span class="stack-name">Docker</span><span class="stack-desc">Containerized services</span></div>
+                <div class="stack-item" style="--d:5"><span class="stack-name">Nginx</span><span class="stack-desc">Reverse proxy + SPA</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stack-divider"></div>
+          <div class="stack-column">
+            <div class="stack-group">
+              <h3><span class="accent-dot"></span>Backend</h3>
+              <div class="stack-items">
+                <div class="stack-item" style="--d:6"><span class="stack-name">Node.js</span><span class="stack-desc">Runtime environment</span></div>
+                <div class="stack-item" style="--d:7"><span class="stack-name">Express 4</span><span class="stack-desc">API framework</span></div>
+                <div class="stack-item" style="--d:8"><span class="stack-name">JWT</span><span class="stack-desc">Authentication</span></div>
+                <div class="stack-item" style="--d:9"><span class="stack-name">bcryptjs</span><span class="stack-desc">Password hashing</span></div>
+              </div>
+            </div>
+            <div class="stack-group">
+              <h3><span class="accent-dot"></span>Database</h3>
+              <div class="stack-items">
+                <div class="stack-item" style="--d:10"><span class="stack-name">SQLite</span><span class="stack-desc">Embedded database</span></div>
+                <div class="stack-item" style="--d:11"><span class="stack-name">better-sqlite3</span><span class="stack-desc">Sync SQL driver</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Architecture -->
+    <section class="slide" data-slide="3">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">03</span>
+        <h2>System Architecture</h2>
+        <p class="slide-subtitle">How the pieces fit together</p>
+        <div class="arch-diagram">
+          <div class="arch-layer arch-front" style="--i:0">
+            <div class="arch-label">Frontend</div>
+            <div class="arch-boxes">
+              <div class="arch-box">React SPA</div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-box">Axios API</div>
+            </div>
+          </div>
+          <div class="arch-connector">⬇ ⬆</div>
+          <div class="arch-layer arch-middle" style="--i:1">
+            <div class="arch-label">Backend</div>
+            <div class="arch-boxes">
+              <div class="arch-box">Express<br/>Routes</div>
+              <div class="arch-box">JWT Auth<br/>Middleware</div>
+              <div class="arch-box">Pricing<br/>Engine</div>
+            </div>
+          </div>
+          <div class="arch-connector">⬇ ⬆</div>
+          <div class="arch-layer arch-back" style="--i:2">
+            <div class="arch-label">Database</div>
+            <div class="arch-boxes">
+              <div class="arch-box db-box">SQLite</div>
+              <div class="arch-box db-box" style="font-size:0.7rem">7 Tables</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Database Schema -->
+    <section class="slide" data-slide="4">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">04</span>
+        <h2>Database Schema</h2>
+        <p class="slide-subtitle">7 tables powering the entire system</p>
+        <div class="schema-grid">
+          <div class="schema-table" style="--i:0">
+            <div class="schema-header">users</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span>username</span><span>TEXT</span></div>
+            <div class="schema-row"><span>password</span><span>TEXT (bcrypt)</span></div>
+            <div class="schema-row"><span>role</span><span>'admin' | 'worker'</span></div>
+          </div>
+          <div class="schema-table" style="--i:1">
+            <div class="schema-header">playstations</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span>name</span><span>TEXT</span></div>
+            <div class="schema-row"><span>is_active</span><span>BOOLEAN</span></div>
+          </div>
+          <div class="schema-table" style="--i:2">
+            <div class="schema-header">pricing_config</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span class="fk">playstation_id</span><span>FK</span></div>
+            <div class="schema-row"><span>mode</span><span>'single' | 'multi'</span></div>
+            <div class="schema-row"><span>weekday_rate</span><span>DECIMAL</span></div>
+            <div class="schema-row"><span>weekend_rate</span><span>DECIMAL</span></div>
+          </div>
+          <div class="schema-table" style="--i:3">
+            <div class="schema-header">sessions</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span class="fk">playstation_id</span><span>FK</span></div>
+            <div class="schema-row"><span>customer_name</span><span>TEXT</span></div>
+            <div class="schema-row"><span>start_time</span><span>DATETIME</span></div>
+            <div class="schema-row"><span>end_time</span><span>DATETIME</span></div>
+            <div class="schema-row"><span>status</span><span>'active' | 'completed'</span></div>
+            <div class="schema-row"><span>total_cost</span><span>DECIMAL</span></div>
+          </div>
+          <div class="schema-table" style="--i:4">
+            <div class="schema-header">order_items</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span class="fk">session_id</span><span>FK</span></div>
+            <div class="schema-row"><span class="fk">product_id</span><span>FK</span></div>
+            <div class="schema-row"><span>quantity</span><span>INTEGER</span></div>
+            <div class="schema-row"><span>subtotal</span><span>DECIMAL</span></div>
+          </div>
+          <div class="schema-table" style="--i:5">
+            <div class="schema-header">products</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span>name</span><span>TEXT</span></div>
+            <div class="schema-row"><span>price</span><span>DECIMAL</span></div>
+            <div class="schema-row"><span>stock</span><span>INTEGER</span></div>
+          </div>
+          <div class="schema-table schema-table-wide" style="--i:6">
+            <div class="schema-header">audit_log</div>
+            <div class="schema-row"><span class="pk">id</span><span>INTEGER</span></div>
+            <div class="schema-row"><span>action</span><span>TEXT</span></div>
+            <div class="schema-row"><span>entity_type</span><span>TEXT</span></div>
+            <div class="schema-row"><span>old_values / new_values</span><span>JSON</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Key Features -->
+    <section class="slide" data-slide="5">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">05</span>
+        <h2>Key Features</h2>
+        <p class="slide-subtitle">Built for real-world cafe operations</p>
+        <div class="features-list">
+          <div class="feature-row" style="--i:0">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-text">
+              <h3>Real-Time Session Tracking</h3>
+              <p>Live elapsed time and cost display with 15-min interval billing. Cairo timezone aware.</p>
+            </div>
+          </div>
+          <div class="feature-row" style="--i:1">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-text">
+              <h3>Day/Night &amp; Weekend Pricing</h3>
+              <p>Per-station configurable rates with day/night multipliers and weekend day selection.</p>
+            </div>
+          </div>
+          <div class="feature-row" style="--i:2">
+            <div class="feature-icon">🎮</div>
+            <div class="feature-text">
+              <h3>Single &amp; Multi-Player Modes</h3>
+              <p>Different pricing tiers for solo vs. group gameplay on the same station.</p>
+            </div>
+          </div>
+          <div class="feature-row" style="--i:3">
+            <div class="feature-icon">📱</div>
+            <div class="feature-text">
+              <h3>Fully Responsive Dark UI</h3>
+              <p>Mobile-first design with a sleek dark theme optimized for cafe counter environments.</p>
+            </div>
+          </div>
+          <div class="feature-row" style="--i:4">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-text">
+              <h3>Complete Audit Trail</h3>
+              <p>Every create, update, and delete logged with before/after JSON diffs for full traceability.</p>
+            </div>
+          </div>
+          <div class="feature-row" style="--i:5">
+            <div class="feature-icon">📈</div>
+            <div class="feature-text">
+              <h3>Dashboard Analytics</h3>
+              <p>Today/week/month revenue, revenue by PlayStation, and top-selling products at a glance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Pages Tour -->
+    <section class="slide" data-slide="6">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">06</span>
+        <h2>Interface Walkthrough</h2>
+        <p class="slide-subtitle">Every screen in the application</p>
+        <div class="pages-scroll">
+          <div class="page-card" style="--i:0">
+            <div class="page-icon">📊</div>
+            <div class="page-info">
+              <h3>Dashboard</h3>
+              <p>Revenue stats, PS revenue chart, top products table</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:1">
+            <div class="page-icon">🎮</div>
+            <div class="page-info">
+              <h3>Worker View</h3>
+              <p>PS grid with live session controls, order management</p>
+              <span class="page-role all-badge">All</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:2">
+            <div class="page-icon">🖥️</div>
+            <div class="page-info">
+              <h3>PlayStations</h3>
+              <p>CRUD table for PlayStation stations and their status</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:3">
+            <div class="page-icon">👥</div>
+            <div class="page-info">
+              <h3>Users</h3>
+              <p>User management and password changes</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:4">
+            <div class="page-icon">🍕</div>
+            <div class="page-info">
+              <h3>Products</h3>
+              <p>Categorized products with price, cost, stock tracking</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:5">
+            <div class="page-icon">💲</div>
+            <div class="page-info">
+              <h3>Pricing</h3>
+              <p>Per-PS pricing cards with mode/time/rate config</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:6">
+            <div class="page-icon">📋</div>
+            <div class="page-info">
+              <h3>Orders</h3>
+              <p>Session order management with date filtering</p>
+              <span class="page-role all-badge">All</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:7">
+            <div class="page-icon">📈</div>
+            <div class="page-info">
+              <h3>Reports</h3>
+              <p>Sessions report + Revenue report grouped by day/week/month</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+          <div class="page-card" style="--i:8">
+            <div class="page-icon">📝</div>
+            <div class="page-info">
+              <h3>Audit Log</h3>
+              <p>Full audit trail with entity filters and JSON diffs</p>
+              <span class="page-role admin-badge">Admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Pricing Engine -->
+    <section class="slide" data-slide="7">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">07</span>
+        <h2>Pricing Engine</h2>
+        <p class="slide-subtitle">Smart cost calculation in real-time</p>
+        <div class="pricing-demo">
+          <div class="pricing-formula">
+            <div class="formula-box">
+              <span class="formula-label">Base Rate</span>
+              <span class="formula-value">$11-18/hr</span>
+            </div>
+            <span class="formula-op">×</span>
+            <div class="formula-box">
+              <span class="formula-label">Mode Multiplier</span>
+              <span class="formula-value">Single (1x) / Multi (1.7x)</span>
+            </div>
+            <span class="formula-op">×</span>
+            <div class="formula-box">
+              <span class="formula-label">Time Multiplier</span>
+              <span class="formula-value">Day (1x) / Night (1.5x)</span>
+            </div>
+            <span class="formula-op">×</span>
+            <div class="formula-box">
+              <span class="formula-label">Day Type</span>
+              <span class="formula-value">Weekday (1x) / Weekend (1.2x)</span>
+            </div>
+          </div>
+          <div class="pricing-notes">
+            <div class="pricing-note">
+              <span class="note-bullet"></span>
+              <p>15-minute billing intervals for precise charges</p>
+            </div>
+            <div class="pricing-note">
+              <span class="note-bullet"></span>
+              <p>Per-PlayStation configuration for flexible pricing strategies</p>
+            </div>
+            <div class="pricing-note">
+              <span class="note-bullet"></span>
+              <p>Configurable weekend days (e.g., Fri-Sat or Fri-Sun)</p>
+            </div>
+            <div class="pricing-note">
+              <span class="note-bullet"></span>
+              <p>Automatic timezone handling (Africa/Cairo)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Security -->
+    <section class="slide" data-slide="8">
+      <div class="scanlines"></div>
+      <div class="slide-content">
+        <span class="slide-number">08</span>
+        <h2>Security &amp; Permissions</h2>
+        <p class="slide-subtitle">Defense in depth</p>
+        <div class="security-grid">
+          <div class="security-card" style="--i:0">
+            <div class="sec-icon">🔑</div>
+            <h3>JWT Authentication</h3>
+            <p>Token-based auth with configurable expiry and secure HTTP-only transmission.</p>
+          </div>
+          <div class="security-card" style="--i:1">
+            <div class="sec-icon">🛡️</div>
+            <h3>Helmet Security</h3>
+            <p>CSP headers, XSS protection, and other HTTP security headers via Helmet middleware.</p>
+          </div>
+          <div class="security-card" style="--i:2">
+            <div class="sec-icon">⏱️</div>
+            <h3>Rate Limiting</h3>
+            <p>API rate limits (10k/15min) and strict auth endpoint limits (50/15min) via express-rate-limit.</p>
+          </div>
+          <div class="security-card" style="--i:3">
+            <div class="sec-icon">🔒</div>
+            <h3>Input Validation</h3>
+            <p>All endpoints validated with express-validator. SQL injection prevented by parameterized queries.</p>
+          </div>
+          <div class="security-card" style="--i:4">
+            <div class="sec-icon">👤</div>
+            <h3>Role Guards</h3>
+            <p>Admin-only endpoints protected by middleware. Workers see only their permitted views.</p>
+          </div>
+          <div class="security-card" style="--i:5">
+            <div class="sec-icon">🔐</div>
+            <h3>Password Hashing</h3>
+            <p>All passwords hashed with bcryptjs (salt rounds = 10). No plaintext storage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Team -->
+    <section class="slide" data-slide="9">
+      <div class="scanlines"></div>
+      <div class="slide-content center">
+        <span class="slide-number">09</span>
+        <h2>PS Cafe</h2>
+        <p class="slide-subtitle">Built with passion for gamers</p>
+        <div class="team-section">
+          <div class="team-quote">
+            <blockquote>
+              A full-stack management system that streamlines cafe operations — from session tracking to dynamic pricing, product orders to audit trails.
+            </blockquote>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+          <div class="cta-line">
+            <span class="cta-text">Ready to deploy &nbsp;→</span>
+            <span class="cta-sub">docker-compose up -d</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Keyboard Navigation -->
+  <div class="key-hint">← →</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

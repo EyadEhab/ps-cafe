@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ps-cafe-backend
+    environment:
+      - PORT=3001
+      - JWT_SECRET=ps-cafe-secret-change-in-production
+      - DB_PATH=/app/data/ps-cafe.db
+    volumes:
+      - ps-cafe-data:/app/data
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    networks:
+      - ps-cafe-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ps-cafe-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - ps-cafe-network
+
+volumes:
+  ps-cafe-data:
+    driver: local
+
+networks:
+  ps-cafe-network:
+    driver: bridge
