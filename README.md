@@ -163,7 +163,3 @@ To reset the database, remove the Docker volume:
 docker-compose down -v
 docker-compose up -d --build
 ```
-
-## License
-
-MIT License
